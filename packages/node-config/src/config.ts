@@ -6,21 +6,20 @@ function isUndefined(value: any): boolean {
 }
 
 export interface IConfig {
-  get<T = any>(key: string): T | null
-  getWithDefault<T = any>(key: string, defaultVal: T): T
+  get<T = any>(key: string): T | undefined;
+  getWithDefault<T = any>(key: string, defaultVal: T): T | undefined;
 }
 
-
 export class Config implements IConfig {
-  private readonly configOptions: IConfigOptions
+  private readonly configOptions: IConfigOptions;
 
   private validatedEnvConfig: Record<string, any> | undefined;
 
-  constructor(configOption: IConfigOptions={}) {
-    this.configOptions = configOption
+  constructor(configOption: IConfigOptions = {}) {
+    this.configOptions = configOption;
   }
 
-  public get<T = any>(key: string): T | null {
+  public get<T = any>(key: string): T | undefined {
     const processValue = process.env?.[key];
 
     if (!isUndefined(processValue)) {
@@ -28,20 +27,15 @@ export class Config implements IConfig {
     }
 
     if (!this.validatedEnvConfig) {
-      this.validatedEnvConfig = readConfigFile(this.configOptions.envFilePath ?? process.cwd() + 'config/development.yaml')
+      this.validatedEnvConfig = readConfigFile(this.configOptions.envFilePath ?? process.cwd() + 'config/development.yaml');
     }
 
-   return this.validatedEnvConfig?.[key];
+    return this.validatedEnvConfig?.[key];
   }
 
+  public getWithDefault<T = any>(key: string, defaultVal: T): T | undefined {
+    const envValue: T | undefined = this.get<T>(key);
 
-  public getWithDefault<T = any>(key: string, defaultVal: T): T {
-    const configVal: T | null = this.get<T>(key)
-    if (configVal !== null) {
-      return configVal
-    } else {
-      return defaultVal
-    }
+    return isUndefined(envValue) ? defaultVal : envValue;
   }
-
 }

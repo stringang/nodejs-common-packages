@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/test'],
   preset: 'ts-jest',
   testEnvironment: 'node',
   testMatch: ['**/?(*.)+(spec|test).[jt]s'],

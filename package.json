@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "prettier:all": "yarn prettier --write '**/*'",
+    "prettier:all": "yarn prettier --write **/*.{ts,json,md}",
     "lint": "eslint packages --ext .ts,.js"
   },
   "keywords": [],

@@ -1,5 +1,3 @@
-
-
 export interface IConfigOptions {
   /**
    * Path to the environment file(s) to be loaded.

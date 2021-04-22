@@ -15,14 +15,8 @@
     "noUnusedParameters": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": false,
-    "lib": [
-      "es7"
-    ]
+    "lib": ["es7"]
   },
-  "include": [
-    "packages/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules"]
 }

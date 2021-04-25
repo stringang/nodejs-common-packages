@@ -17,6 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",
+    "lerna": "^4.0.0",
     "nyc": "^15.1.0",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",

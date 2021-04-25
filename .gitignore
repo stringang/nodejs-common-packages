@@ -9,7 +9,10 @@ yarn-error.log*
 
 # Dependency directories
 node_modules
+packages/*/package-lock.json
+package-lock.json
 
+# build and test
 lib
 lib-commonjs
 lib-amd
@@ -21,8 +24,6 @@ temp
 *.tgz
 *.tar
 *.gz
-
-package-lock.json
 
 # Jetbrains editor folder
 .idea/

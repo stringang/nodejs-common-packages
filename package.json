@@ -7,7 +7,8 @@
   "scripts": {
     "test": "",
     "prettier:all": "yarn prettier --write **/*.{ts,json,md}",
-    "lint": "eslint packages --ext .ts,.js"
+    "lint": "eslint packages --ext .ts,.js",
+    "change": "lerna changed"
   },
   "keywords": [],
   "author": "stringang",
